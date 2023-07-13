@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="note">
+    <ion-item>
+      <ion-label position="stacked">Titulo</ion-label>
+      <ion-input [(ngModel)]="note.titulo"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Fecha</ion-label>
+      <ion-text>{{note.fecha}}</ion-text> 
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Fecha</ion-label>
+      <ion-textarea [(ngModel)]="note.descripcion" rows="5"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Descripcion</ion-label>
+      <ion-textarea [(ngModel)]="note.descripcion" rows="5"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+    <ion-img
+  [src]=note.foto widht="50%" height="50%"
+></ion-img>
+</ion-item>
+
+<ion-item>
+  <ion-label position="stacked">Audio</ion-label>
+  <ion-textarea [(ngModel)]="note.audio" rows="5"></ion-textarea>
+</ion-item>
+
+
+
+  </div>
+
+
+  <ion-button expand="block" color="danger" (click)="deleteNote()">
+    <ion-icon name="trash" slot="start"></ion-icon>
+    Borrar
+  </ion-button>
+
+</ion-content>
